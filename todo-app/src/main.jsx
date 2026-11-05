@@ -1,2 +1,8 @@
 import { h, mount } from 'naufrago';
-mount(() => <main><h1>Diario del náufrago</h1><p>Proyecto inicial</p></main>, document.getElementById('root'));
+import { store } from './store.js';
+import { App } from './components/App.jsx';
+import './styles.css';
+
+const app = mount(App, document.getElementById('root'), [store]);
+document.querySelector('input.new')?.focus();
+export default app;
